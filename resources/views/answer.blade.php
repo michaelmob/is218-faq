@@ -18,6 +18,9 @@
                     <a class="btn btn-primary float-right mr-2" href="{{ route('answers.edit', [ 'answer_id'=> $answer->id ]) }}">
                         Edit This Answer
                     </a>
+                    <a class="btn btn-primary float-right mr-2" href="{{ route('answers.clap', [ 'answer_id' => $answer->id ]) }}">
+                        👏{{ $answer->claps }}
+                    </a>
                     <a class="btn float-right mr-2" href="{{ route('questions.show', [ 'answer_id'=> $answer->question ]) }}">
                         Go To Question
                     </a>

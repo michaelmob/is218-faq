@@ -20,6 +20,8 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/answers/clap/{id}', 'AnswerController@clap')->name('answers.clap');
+
 Route::resource('profiles', 'ProfileController');
 Route::resource('questions', 'QuestionController');
 Route::resource('answers', 'AnswerController');

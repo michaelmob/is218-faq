@@ -48,6 +48,9 @@
                         <a class="btn btn-primary float-right" href="{{ route('answers.show', [ 'answer_id' => $answer->id ]) }}">
                             View
                         </a>
+                        <a class="btn btn-primary float-right mr-2" href="{{ route('answers.clap', [ 'answer_id' => $answer->id ]) }}">
+                            👏{{ $answer->claps }}
+                        </a>
                     </div>
                 </div>
             @empty

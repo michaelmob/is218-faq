@@ -23,4 +23,13 @@ class Answer extends Model
     {
         return $this->belongsTo('App\Question');
     }
+
+
+    /*
+     * Increment clap counter field.
+     */
+    public function clap()
+    {
+        return $this->increment('claps');
+    }
 }

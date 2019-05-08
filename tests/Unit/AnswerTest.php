@@ -29,5 +29,20 @@ class AnswerTest extends TestCase
         $answerCreated = $answer->save();
 
         $this->assertTrue($answerCreated);
+        return $answer;
+    }
+
+
+    /**
+     * Test that clap counter is incremented on clap.
+     *
+     * @return void
+     */
+    public function testClapForAnswer()
+    {
+        $answer = $this->testAnswerCreation();
+        $answer->clap();
+
+        $this->assertEquals(1, $answer->claps);
     }
 }
