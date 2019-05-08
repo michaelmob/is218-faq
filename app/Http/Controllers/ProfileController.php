@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
+
+class ProfileController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -18,23 +19,13 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Display a user's profile.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function show($id)
     {
-        return view('home');
-    }
-
-    /**
-     * Show user profile.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function profile()
-    {
-        $user = Auth::user();
-        return view('profile', [ 'user' => $user ]);
+        $user = \App\User::where('id', $id)->first();
+        return view('profile', [ 'profile' => $user->profile ]);
     }
 }
