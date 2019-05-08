@@ -29,6 +29,23 @@ class AnswerController extends Controller
 
     }
 
+
+    /**
+     * Increment an Answer's clap counter.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function clap(int $id)
+    {
+        $answer = Answer::where('id', $id)->first();
+        if ($answer)
+            $answer->clap();
+
+        return redirect()->route('questions.show', [ 'question' => $answer->question_id ])
+                         ->with('message', 'You have clapped!');
+    }
+
+
     /**
      * Show an answer.
      *
