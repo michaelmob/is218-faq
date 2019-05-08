@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class QuestionTest extends TestCase
 {
     /**
-     * A basic unit test example.
+     * Test if question is created.
      *
      * @return void
      */
