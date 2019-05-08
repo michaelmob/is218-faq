@@ -26,6 +26,8 @@ class ProfileController extends Controller
     public function show($id)
     {
         $user = \App\User::where('id', $id)->first();
-        return view('profile', [ 'profile' => $user->profile ]);
+        if (!$user)
+            $user = Auth::user();
+        return view('profile', [ 'user' => $user, 'profile' => $user->profile ]);
     }
 }
