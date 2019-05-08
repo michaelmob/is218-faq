@@ -14,7 +14,7 @@ class AddClapColumnToAnswers extends Migration
     public function up()
     {
         Schema::table('answers', function (Blueprint $table) {
-            $table->integer('claps')->default(0);
+            $table->bigInteger('claps')->default(0);
         });
     }
 
