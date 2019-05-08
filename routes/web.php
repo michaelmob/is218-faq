@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/profile/{id}', 'ProfileController@show')->name('profile');
+
+Route::resource('profiles', 'ProfileController');
 Route::resource('questions', 'QuestionController');
 Route::resource('answers', 'AnswerController');
