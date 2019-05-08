@@ -26,6 +26,6 @@ class Question extends Model
      */
     public function answers()
     {
-        return \App\Answer::where('question_id', $this->id);
+        return $this->hasMany('App\Answer');
     }
 }
