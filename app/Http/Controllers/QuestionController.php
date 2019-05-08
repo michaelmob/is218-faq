@@ -24,7 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $questions = \App\Question::orderBy('-created_at')->paginate(6);
-        return view('home')->with('questions', $questions);
+        return view('home');
     }
 }

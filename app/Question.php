@@ -17,4 +17,15 @@ class Question extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+
+    /**
+     * Get User, question belongs to User.
+     *
+     * @var App\User
+     */
+    public function answers()
+    {
+        return \App\Answer::where('question_id', $this->id);
+    }
 }
