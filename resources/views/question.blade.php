@@ -41,7 +41,7 @@
                     <div class="card-footer">
                         <span>
                             by
-                            <a href="{{ route('profiles', [ 'id' => $answer->user->id ]) }}">
+                            <a href="{{ route('profiles.show', [ 'id' => $answer->user->id ]) }}">
                                 {{ $answer->user->name }}
                             </a>
                         </span>
