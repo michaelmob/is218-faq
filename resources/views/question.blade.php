@@ -49,7 +49,7 @@
                             View
                         </a>
                         <a class="btn btn-primary float-right mr-2" href="{{ route('answers.clap', [ 'answer_id' => $answer->id ]) }}">
-                            👏Clap
+                            👏{{ $answer->claps }}
                         </a>
                     </div>
                 </div>
